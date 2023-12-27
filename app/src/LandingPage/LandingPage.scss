@@ -1,0 +1,10 @@
+@import "../Style/ColorPalette";
+
+.divider {
+  background-color: $text-white;
+  margin-top: 10px !important;
+  margin-bottom: 60px !important;
+  border: none;
+  height: 2px;
+  opacity: 0.15 !important;
+}

@@ -1,0 +1,75 @@
+@import "../../Style/ColorPalette";
+
+.footer {
+  box-shadow: none !important;
+  margin: 0 auto;
+  padding-inline: 20px;
+  max-width: 1100px;
+  position: static !important;
+  height: 194px !important;
+  padding-top: 40px !important;
+  padding-bottom: 90px !important;
+}
+
+.footer-toolbar {
+  padding-inline: 20px !important;
+
+  @media screen and (max-width: 599px) {
+    padding-inline: 0 !important;
+  }
+
+  .footer-button {
+    color: $text-white;
+    margin-left: 20px;
+    line-height: 1.5;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: .3s !important;
+
+    @media screen and (max-width: 799px) {
+      margin-left: 0;
+      margin-right: 20px;
+    }
+
+    &:hover {
+      text-decoration: none;
+      opacity: .7;
+    }
+  }
+}
+
+.toolbar-box {
+  flex-grow: 1;
+}
+
+.copyright {
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  color: $text-white;
+  font-family: $font-style !important;
+  font-size: 18px !important;
+  line-height: 27px !important;
+}
+
+.buttons-item {
+  text-align: end;
+
+  @media screen and (max-width: 799px) {
+    text-align: start;
+    padding-top: 15px;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 0;
+  margin-right: 30px;
+  border: medium;
+}

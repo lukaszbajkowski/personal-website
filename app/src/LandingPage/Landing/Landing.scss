@@ -1,0 +1,87 @@
+@import "../../Style/ColorPalette";
+
+.position {
+  padding-top: 30px;
+  padding-bottom: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: 20px;
+  max-width: 1100px;
+  position: static !important;
+
+  @media screen and (max-width: 599px) {
+    padding-inline: 0;
+  }
+
+  @media screen and (max-width: 799px) {
+    padding-bottom: 60px;
+  }
+}
+
+.main-text-toolbar {
+  padding-bottom: 0;
+  padding-inline: 20px !important;
+
+  @media screen and (max-width: 599px) {
+    padding-top: 15px;
+  }
+}
+
+.contact-toolbar {
+  padding-top: 0;
+  padding-inline: 20px !important;
+}
+
+.intro-text {
+  font-family: $font-style !important;
+  font-size: 62px !important;
+  color: $text-white;
+  line-height: 1.1 !important;
+  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+  max-width: 1000px;
+
+  @media screen and (max-width: 799px) {
+    font-size: 48px !important;
+  }
+
+  @media screen and (max-width: 599px) {
+    font-size: 38px !important;
+    letter-spacing: 0 !important;
+  }
+}
+
+.contact-link {
+  display: table;
+  color: $text-white;
+  font-size: 18px !important;
+
+  &:hover {
+    opacity: .7;
+    transition: .3s;
+  }
+}
+
+.contact-link > span {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: currentcolor;
+}
+
+.contact-link-box {
+  margin-top: 80px !important;
+
+  @media screen and (max-width: 799px) {
+    margin-top: 48px !important;
+  }
+}
+
+.arrow-border {
+  color: $text-white;
+  font-size: 18px !important;
+  border-bottom: none !important;
+  min-height: 28px;
+  min-width: 24px;
+  margin-left: 6px;
+  transform: translateY(8px);
+}
