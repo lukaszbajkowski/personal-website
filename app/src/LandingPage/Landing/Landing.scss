@@ -27,9 +27,13 @@
   }
 }
 
-.contact-toolbar {
+@mixin contactToolbar {
   padding-top: 0;
   padding-inline: 20px !important;
+}
+
+.contact-toolbar {
+  @include contactToolbar;
 }
 
 .intro-text {
@@ -54,6 +58,7 @@
 .contact-link {
   display: table;
   color: $text-white;
+  font-family: $font-style !important;
   font-size: 18px !important;
 
   &:hover {
