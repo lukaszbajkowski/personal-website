@@ -35,7 +35,7 @@ export default function About() {
                 </Toolbar>
                 <Grid container spacing={0}>
                     <Grid item xs={12} md={6}>
-                        <Toolbar className={`contact-toolbar contact-link-size`}>
+                        <Toolbar className={`about-toolbar contact-link-size`}>
                             <Link
                                 to={`/contact`}
                             >
@@ -52,7 +52,7 @@ export default function About() {
                         </Toolbar>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <Toolbar className={`about-toolbar contact-link-size`}>
+                        <Toolbar className={`about-toolbar-content contact-link-size`}>
                             <Box>
                                 {aboutData.map((text, index) => (
                                     <Typography

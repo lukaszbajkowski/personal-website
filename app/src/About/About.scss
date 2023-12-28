@@ -12,11 +12,24 @@
 
   @media screen and (max-width: 599px) {
     padding-inline: 0;
+    padding-bottom: 0;
   }
 }
 
 .about-toolbar {
   @include contactToolbar;
+
+  @media screen and (max-width: 799px) {
+    margin-bottom: 50px;
+  }
+}
+
+.about-toolbar-content {
+  @include contactToolbar;
+
+  @media screen and (max-width: 599px) {
+    margin-bottom: 30px;
+  }
 }
 
 .about-title {
