@@ -2,13 +2,14 @@ import React from 'react';
 import {useForm, ValidationError} from '@formspree/react';
 import {Button} from "@mui/material";
 import ArrowRightAltSharpIcon from "@mui/icons-material/ArrowRightAltSharp";
+import SuccessInfo from "./SuccessInfo";
+import './Contact.scss'
 
-function ContactForm () {
+export default function ContactForm () {
     const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_KEY);
 
     if (state.succeeded) {
-        // ogarnac to tutaj i destrukturyzacja oraz error message style
-        return <p>Thanks for joining!</p>;
+        return <SuccessInfo/>;
     }
 
     return (
@@ -25,9 +26,10 @@ function ContactForm () {
                 required
             />
             <ValidationError
-                prefix="Name"
+                prefix="Full Name"
                 field="name"
                 errors={state.errors}
+                className={`error-message`}
             />
 
             <input
@@ -39,7 +41,7 @@ function ContactForm () {
                 required
             />
             <ValidationError
-                prefix="Email"
+                prefix="Email Address"
                 field="email"
                 errors={state.errors}
                 className={`error-message`}
@@ -57,6 +59,7 @@ function ContactForm () {
                 prefix="Message"
                 field="message"
                 errors={state.errors}
+                className={`error-message`}
             />
 
             <Button
@@ -72,11 +75,3 @@ function ContactForm () {
         </form>
     );
 }
-
-function Form () {
-    return (
-        <ContactForm/>
-    );
-}
-
-export default Form;
