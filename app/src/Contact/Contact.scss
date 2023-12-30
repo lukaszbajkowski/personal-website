@@ -1,0 +1,106 @@
+@import "../Style/ColorPalette";
+
+.contact-grid {
+  padding-top: 16px;
+}
+
+.contact-page-toolbar {
+  padding-bottom: 0;
+  padding-inline: 20px !important;
+  min-height: fit-content !important;
+
+  @media screen and (max-width: 599px) {
+    padding-top: 15px;
+  }
+}
+
+.mail-box {
+  margin-top: 10px !important;
+
+  @media screen and (max-width: 799px) {
+    margin-top: 40px !important;
+    margin-bottom: 60px !important;
+  }
+}
+
+.form-width {
+  padding-inline: 20px;
+
+  @media screen and (max-width: 799px) {
+    margin-bottom: 20px;
+  }
+}
+
+.email-input, .email-area {
+  background-color: transparent;
+  position: relative;
+  padding: 15px;
+  border: 1px solid $text-white;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  color: $text-white;
+  opacity: 0.4;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: $font-style !important;
+
+  &:focus {
+    background-color: rgb(118, 131, 218);
+    opacity: 1;
+  }
+}
+
+.email-area {
+  resize: vertical !important;
+}
+
+::placeholder {
+  color: $text-white !important;
+}
+
+:focus-visible {
+  outline: none !important;
+}
+
+.btn-send-form {
+  background-color: transparent;
+  width: auto;
+  border: 2px solid $text-white !important;
+  border-radius: 0 !important;
+  color: $text-white !important;
+  margin-top: 15px !important;
+  margin-bottom: 20px !important;
+  padding: 10px 15px 10px 20px !important;
+  transition: 0.3s;
+  cursor: pointer;
+  text-transform: none !important;
+  font-size: 18px !important;
+  font-family: $font-style !important;
+
+   &:hover {
+    background-color: $text-white !important;
+    color: #1131ca !important;
+
+    .arrow-border {
+      color: #1131ca;
+    }
+  }
+
+  .arrow-border {
+    color: $text-white;
+    font-size: 18px !important;
+    border-bottom: none !important;
+    min-height: 28px;
+    min-width: 24px;
+    margin-left: 6px;
+    transform: translateY(0px);
+  }
+}
+
+// ogarnac to i jeszcze podzial form.js i contact.js a nastepnie push na git i umiesic jako tajne moje id
+.error-message {
+  color: red !important;
+}
+
