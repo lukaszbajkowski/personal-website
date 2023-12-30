@@ -1,4 +1,6 @@
 @import "../Style/ColorPalette";
+@import "../LandingPage/Service/Service";
+@import "../LandingPage/Landing/Landing";
 
 .contact-grid {
   padding-top: 16px;
@@ -14,6 +16,14 @@
   }
 }
 
+.contact-mail-toolbar {
+  @include contactToolbar;
+}
+
+.contact-text {
+  @include services-text;
+}
+
 .mail-box {
   margin-top: 10px !important;
 
@@ -21,6 +31,10 @@
     margin-top: 40px !important;
     margin-bottom: 60px !important;
   }
+}
+
+.mail-link {
+  @include contact-link-style;
 }
 
 .form-width {
@@ -99,7 +113,6 @@
   }
 }
 
-// ogarnac to i jeszcze podzial form.js i contact.js a nastepnie push na git i umiesic jako tajne moje id
 .error-message {
   color: red !important;
 }

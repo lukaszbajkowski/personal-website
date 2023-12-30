@@ -7,6 +7,7 @@ function ContactForm () {
     const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_KEY);
 
     if (state.succeeded) {
+        // ogarnac to tutaj i destrukturyzacja oraz error message style
         return <p>Thanks for joining!</p>;
     }
 

@@ -33,11 +33,16 @@
   margin-bottom: 20px !important;
 }
 
-.services-text {
+
+@mixin services-text {
   color: $text-white;
   font-family: $font-style !important;
   font-size: 18px !important;
   line-height: 27px !important;
+}
+
+.services-text {
+  @include services-text;
 }
 
 .service-box {

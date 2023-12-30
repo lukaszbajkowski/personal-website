@@ -34,18 +34,18 @@ export default function Contact () {
                             <Typography
                                 variant={`h5`}
                                 component={`span`}
-                                className={`services-text`}
+                                className={`contact-text`}
                             >
                                 Want to say hello or have a question? Ping me.
                             </Typography>
                         </Toolbar>
-                        <Toolbar className={`contact-toolbar`}>
+                        <Toolbar className={`contact-mail-toolbar`}>
                             <Link
                                 to={`mailto:contact.lukasz.bajkowski@gmail.com`}
                                 className={`mail-box`}
                             >
                                 <Typography
-                                    className={`contact-link`}
+                                    className={`mail-link`}
                                     component={`div`}
                                 >
                             <span>
