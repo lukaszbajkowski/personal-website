@@ -32,10 +32,9 @@
   }
 }
 
-.about-title {
+@mixin page-title {
   font-family: $font-style !important;
   font-size: 62px !important;
-  color: $text-white;
   line-height: 1.1 !important;
   letter-spacing: 1px !important;
   font-weight: 700 !important;
@@ -51,6 +50,11 @@
     font-size: 38px !important;
     letter-spacing: 0 !important;
   }
+}
+
+.about-title {
+  @include page-title;
+  color: $text-white;
 }
 
 .contact-link-size {

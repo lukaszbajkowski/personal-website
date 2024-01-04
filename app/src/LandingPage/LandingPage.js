@@ -14,7 +14,6 @@ export default function LandingPage () {
             <Service/>
             <Divider className={`divider`}/>
             <Works/>
-            <Footer/>
         </>
     );
 }

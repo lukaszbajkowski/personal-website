@@ -57,7 +57,6 @@
 
 @mixin contact-link-style {
   display: table;
-  color: $text-white;
   font-family: $font-style !important;
   font-size: 18px !important;
 
@@ -75,6 +74,7 @@
 
 .contact-link {
   @include contact-link-style;
+  color: $text-white;
 }
 
 .contact-link-box {

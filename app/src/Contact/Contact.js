@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from "../LandingPage/Footer/Footer";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import './Contact.scss'
@@ -16,20 +15,28 @@ export default function Contact () {
             <Box className={`position-about`}>
                 <CssBaseline/>
                 <Title/>
-                <Grid container
-                      spacing={0}
-                      className={`contact-grid`}
+                <Grid
+                    container
+                    spacing={0}
+                    className={`contact-grid`}
                 >
-                    <Grid item xs={12} md={6}>
+                    <Grid
+                        item
+                        xs={12}
+                        md={6}
+                    >
                         <ContactInfo/>
                         <ContactEmail/>
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid
+                        item
+                        xs={12}
+                        md={6}
+                    >
                         <ContactForm/>
                     </Grid>
                 </Grid>
             </Box>
-            <Footer/>
         </ThemeProvider>
     );
 }

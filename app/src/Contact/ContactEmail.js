@@ -19,7 +19,7 @@ const ContactEmail = () => {
                     <span>
                         Send me an email
                     </span>
-                    <ArrowRightAltSharpIcon className={`arrow-border`}/>
+                    <ArrowRightAltSharpIcon className={`arrow-border-contact`}/>
                 </Typography>
             </Link>
         </Toolbar>

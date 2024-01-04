@@ -24,7 +24,6 @@ export default function About () {
                     </Grid>
                 </Grid>
             </Box>
-            <Footer/>
         </ThemeProvider>
     );
 }

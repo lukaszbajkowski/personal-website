@@ -1,6 +1,7 @@
-@import "../Style/ColorPalette";
+@import "../Style/ColorPaletteLight";
 @import "../LandingPage/Service/Service";
 @import "../LandingPage/Landing/Landing";
+@import "../About/About";
 
 .contact-grid {
   padding-top: 16px;
@@ -20,8 +21,14 @@
   @include contactToolbar;
 }
 
+.contact-title {
+  @include page-title;
+  color: $text-white-light;
+}
+
 .contact-text {
   @include services-text;
+  color: $text-white-light;
 }
 
 .mail-box {
@@ -35,6 +42,17 @@
 
 .mail-link {
   @include contact-link-style;
+  color: $text-white-light;
+}
+
+.arrow-border-contact {
+  color: $text-white-light;
+  font-size: 18px !important;
+  border-bottom: none !important;
+  min-height: 28px;
+  min-width: 24px;
+  margin-left: 6px;
+  transform: translateY(8px);
 }
 
 .form-width {
@@ -49,10 +67,10 @@
   background-color: transparent;
   position: relative;
   padding: 15px;
-  border: 1px solid $text-white;
+  border: 1px solid $text-white-light;
   margin-bottom: 10px;
   transition: 0.3s;
-  color: $text-white;
+  color: $text-white-light;
   opacity: 0.4;
   font-size: 18px;
   display: flex;
@@ -61,7 +79,7 @@
   font-family: $font-style !important;
 
   &:focus {
-    background-color: rgb(118, 131, 218);
+    background-color: $surface-mixed-light-100;
     opacity: 1;
   }
 }
@@ -71,7 +89,7 @@
 }
 
 ::placeholder {
-  color: $text-white !important;
+  color: $text-white-light !important;
 }
 
 :focus-visible {
@@ -81,9 +99,9 @@
 .btn-send-form {
   background-color: transparent;
   width: auto;
-  border: 2px solid $text-white !important;
+  border: 2px solid $text-white-light !important;
   border-radius: 0 !important;
-  color: $text-white !important;
+  color: $text-white-light !important;
   margin-top: 15px !important;
   margin-bottom: 20px !important;
   padding: 10px 15px 10px 20px !important;
@@ -94,16 +112,16 @@
   font-family: $font-style !important;
 
   &:hover {
-    background-color: $text-white !important;
-    color: #1131ca !important;
+    background-color: $text-white-light !important;
+    color: $primary-light-100 !important;
 
     .arrow-border {
-      color: #1131ca;
+      color: $primary-light-100;
     }
   }
 
   .arrow-border {
-    color: $text-white;
+    color: $text-white-light;
     font-size: 18px !important;
     border-bottom: none !important;
     min-height: 28px;

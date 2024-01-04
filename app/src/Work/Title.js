@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import Toolbar from "@mui/material/Toolbar";
 import React from "react";
-import './Contact.scss'
+import './Work.scss'
 
 const Title = () => {
     return (
@@ -9,9 +9,9 @@ const Title = () => {
             <Typography
                 variant={`h2`}
                 component={`span`}
-                className={`contact-title`}
+                className={`work-title`}
             >
-                Talk to me.
+                Selected Work.
             </Typography>
         </Toolbar>
     )

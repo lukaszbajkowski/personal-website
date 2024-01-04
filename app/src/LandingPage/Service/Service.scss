@@ -35,7 +35,6 @@
 
 
 @mixin services-text {
-  color: $text-white;
   font-family: $font-style !important;
   font-size: 18px !important;
   line-height: 27px !important;
@@ -43,6 +42,7 @@
 
 .services-text {
   @include services-text;
+  color: $text-white;
 }
 
 .service-box {
