@@ -1,11 +1,17 @@
+@import "../Style/ColorPalette";
+
 .background-section {
   position: relative;
   top: -150px;
   padding-top: 150px;
-  margin-bottom: -200px;
-  background-size: cover;
-  background-position: center;
+  margin-bottom: -170px;
+  background-size: cover !important;
+  background-position: center !important;
   z-index: -1;
+
+  @media screen and (max-width: 799px) {
+    margin-bottom: -200px;
+  }
 }
 
 .background-style {
@@ -22,11 +28,16 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-left: 0;
-  padding-right: 0;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 30px;
   position: relative;
   margin: auto;
+
+  @media screen and (max-width: 599px) {
+    padding-inline: 0;
+  }
 }
 
 .background-text {
@@ -35,11 +46,31 @@
 }
 
 .text-position {
-  padding: 40px 0 90px;
   position: relative;
   z-index: 3;
+  text-align: center;
+  padding: 80px 20px 170px;
+
+  @media screen and (max-width: 799px) {
+    padding: 40px 0 90px;
+    text-align: start;
+  }
 }
 
 .text-size {
-  font-size: 48px;
+  font-size: 82px;
+  text-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  color: $text-white;
+  margin-top: 0 !important;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  max-width: 1000px;
+
+  @media screen and (max-width: 799px) {
+    font-size: 62px;
+  }
+
+  @media screen and (max-width: 599px) {
+    font-size: 46px;
+  }
 }
