@@ -10,24 +10,28 @@ export const workData = [
         imgSrc: img1,
         title: 'Nucleus Intranet',
         subtitle: 'AstraZeneca',
-        color:'#3D1D90FF'
+        content: "Lead design of a global intranet for AstraZeneca spanning over 10 languages and 80 thousand daily users.",
+        color: '#3D1D90FF'
     },
     {
         imgSrc: img2,
         title: 'Remote Education Product',
         subtitle: 'Pearson',
-        color:'#00A9C6FF'
+        content: "Creation of a new way in educating a workforce remotely for Pearson Education.",
+        color: '#00A9C6FF'
     },
     {
         imgSrc: img3,
         title: 'People Search App',
         subtitle: 'AstraZeneca',
-        color:'#C90077FF'
+        content: "An iOS app for searching colleagues within AstraZeneca.",
+        color: '#C90077FF'
     },
     {
         imgSrc: img4,
         title: 'Metric Typeface',
         subtitle: 'Side Project',
-        color:'#00BC6CFF'
+        content: "A geometric display typeface built for unique brands.",
+        color: '#00BC6CFF'
     },
 ];
