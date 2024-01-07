@@ -78,6 +78,13 @@
           margin-bottom: 1px;
         }
 
+        @media only screen and (hover: none) and (pointer: coarse) {
+          padding-bottom: max(320px, 100%);
+        }
+        @media only screen and (hover: hover) and (pointer: coarse) {
+          padding-bottom: max(320px, 100%);
+        }
+
         .work-img {
           position: absolute;
           width: 100%;
