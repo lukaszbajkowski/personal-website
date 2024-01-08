@@ -2,6 +2,8 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 import './WorkDetails.scss'
 import {workData} from "../Work/WorkData";
+import {Divider} from "@mui/material";
+import img1 from './Img/devices.png';
 
 const WorkDetails = () => {
     const {id} = useParams();
@@ -155,6 +157,213 @@ const WorkDetails = () => {
                     </div>
                 </div>
             </div>
+
+            <Divider className={`divider`}/>
+
+            <div
+                className="process-section"
+                data-radium="true"
+            >
+                <div
+                    className="process-graph"
+                    data-radium="true"
+                >
+                    <div
+                        className="process-container"
+                        data-radium="true"
+                    >
+                        <h2
+                            data-radium="true"
+                            className={`graph-title`}
+                        >
+                            Process
+                        </h2>
+                        <div
+                            className="graph-element"
+                            data-radium="true"
+                        >
+                            <span
+                                className={`graph-icon`}
+                                data-radium="true"
+                            />
+                            <span
+                                className={`graph-connector`}
+                                data-radium="true"
+                            />
+                            <h3
+                                className={`graph-element-title`}
+                                data-radium="true"
+                            >
+                                Discover
+                            </h3>
+                            <li
+                                className={`graph-element-content`}
+                                data-radium="true"
+                            >
+                                Client workshops
+                            </li>
+                            <li
+                                className={`graph-element-content`}
+                                data-radium="true"
+                            >
+                                Current
+                                market alternatives
+                            </li>
+                        </div>
+                        <div
+                            className="graph-element"
+                            data-radium="true"
+                        >
+                            <span
+                                className={`graph-icon`}
+                                data-radium="true"
+                            />
+                            <span
+                                className={`graph-connector`}
+                                data-radium="true"
+                            />
+                            <h3
+                                className={`graph-element-title`}
+                                data-radium="true"
+                            >
+                                Discover
+                            </h3>
+                            <li
+                                className={`graph-element-content`}
+                                data-radium="true"
+                            >
+                                Client workshops
+                            </li>
+                            <li
+                                className={`graph-element-content`}
+                                data-radium="true"
+                            >
+                                Current
+                                market alternatives
+                            </li>
+                        </div>
+                        <div
+                            className="graph-element"
+                            data-radium="true"
+                        >
+                            <span
+                                className={`graph-icon`}
+                                data-radium="true"
+                            />
+                            <span
+                                className={`graph-connector`}
+                                data-radium="true"
+                            />
+                            <h3
+                                className={`graph-element-title`}
+                                data-radium="true"
+                            >
+                                Discover
+                            </h3>
+                            <li
+                                className={`graph-element-content`}
+                                data-radium="true"
+                            >
+                                Client workshops
+                            </li>
+                            <li
+                                className={`graph-element-content`}
+                                data-radium="true"
+                            >
+                                Current
+                                market alternatives
+                            </li>
+                        </div>
+                        <div
+                            className="graph-element"
+                            data-radium="true"
+                        >
+                            <span
+                                className={`graph-icon`}
+                                data-radium="true"
+                            />
+                            <span
+                                className={`graph-connector`}
+                                data-radium="true"
+                            />
+                            <h3
+                                className={`graph-element-title`}
+                                data-radium="true"
+                            >
+                                Discover
+                            </h3>
+                            <li
+                                className={`graph-element-content`}
+                                data-radium="true"
+                            >
+                                Client workshops
+                            </li>
+                            <li
+                                className={`graph-element-content`}
+                                data-radium="true"
+                            >
+                                Current
+                                market alternatives
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    className="text-col-title"
+                    data-radium="true"
+                >
+                    <h2
+                        data-radium="true"
+                        className={`text-title`}
+                    >
+                        Brief: Transformation from an 800+
+                        powerpoint to an energetic and educational product.
+                    </h2>
+                </div>
+                <div
+                    className="text-col-desc"
+                    data-radium="true"
+                >
+                    <div>
+                        <p
+                            className={`desc-content`}
+                        >
+                            The initial brief was to create an engaging educational course that didn’t shackle employees
+                            into a room for two days. The key features for the new course were; to reduce text based
+                            content, make the course accessible from any device and to make it interactive and
+                            enjoyable.
+                        </p>
+                        <p
+                            className={`desc-content`}
+                        >
+                            By making the course responsive and work on every device, employees could
+                            spread the course out over a month – digesting the content at their own pace.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    className="image-row"
+                    data-radium="true"
+                >
+                    <div>
+                        <div
+                            className={`image-position`}
+                            data-radium="true"
+                        >
+                            <img
+                                src={img1}
+                                alt="Pearson Education Course shown on multiple devices"
+                                className={`image`}
+                                data-radium="true"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <Divider className={`divider`}/>
+
+
         </>
     );
 };
