@@ -15,6 +15,10 @@ const WorkDetails = () => {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 30%, ${selectedWork.color})`,
     };
 
+    const backgroundGradient = {
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 30%, ${selectedWork.color} 50%)`,
+    };
+
     return (
         <>
             <section
@@ -381,6 +385,7 @@ const WorkDetails = () => {
                     <div
                         data-radium="true"
                         className={`position-gradient`}
+                        style={backgroundGradient}
                     />
                 </div>
             </div>
