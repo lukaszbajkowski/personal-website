@@ -4,6 +4,8 @@ import './WorkDetails.scss'
 import {workData} from "../Work/WorkData";
 import {Divider} from "@mui/material";
 import img1 from './Img/devices.png';
+import img2 from './Img/devices-responsive.png';
+import video1 from './Video/background-video.mp4'
 
 const WorkDetails = () => {
     const {id} = useParams();
@@ -363,6 +365,89 @@ const WorkDetails = () => {
 
             <Divider className={`divider`}/>
 
+            <div className="video-section">
+                <div
+                    data-radium="true"
+                    className={`video-box`}
+                >
+                    <video
+                        src={video1}
+                        loop
+                        autoPlay
+                        muted
+                        className="video-display"
+                        data-radium="true"
+                    />
+                    <div
+                        data-radium="true"
+                        className={`position-gradient`}
+                    />
+                </div>
+            </div>
+
+            <div
+                className="about-responsive-section"
+                data-radium="true"
+            >
+                <div
+                    className="text-col-title"
+                    data-radium="true"
+                >
+                    <h2
+                        className={`text-title`}
+                        data-radium="true"
+                    >
+                        Through gamification users were challenged to want to learn.
+                    </h2>
+                </div>
+                <div
+                    className="text-col-desc"
+                    data-radium="true"
+                >
+                    <div>
+                        <p
+                            className={`desc-content`}
+                        >
+                            Through gamification quick quiz called Fasttrack was created which concludes each module.
+                            Fasttrack helped break up heavy amounts of content with fun and varied games, but also
+                            ensured students were learning the content.
+                        </p>
+                        <p
+                            className={`desc-content`}
+                        >
+                            The course had to meet standards set by IOSH (safety regulation board) for accreditation.
+                            Fasttrack was made up of multiple games, ranging from drag and drop into the missing fields,
+                            fruit ninja style slashing of incorrect answers or stack the answers in the correct order.
+                        </p>
+                        <p
+                            className={`desc-content`}
+                        >
+                            Each game had their own brand, including targeted voiceovers encouraging the students to
+                            fully engage with the course.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    className="device-responsive-section"
+                    data-radium="true"
+                >
+                    <div>
+                        <div
+                            className={`image-position`}
+                            data-radium="true"
+                        >
+                            <img
+                                src={img2}
+                                alt="Pearson Course shown on multiple devices"
+                                data-radium="true"
+                                className={`responsive-design-img`}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <Divider className={`divider`}/>
 
         </>
     );
