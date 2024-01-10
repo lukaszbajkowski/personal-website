@@ -110,6 +110,10 @@
       @media screen and (max-width: 799px) {
         display: none;
       }
+
+      img {
+        width: 100%;
+      }
     }
   }
 
@@ -174,6 +178,10 @@
         margin-top: 0;
         margin-bottom: 20px;
         color: $text-white;
+      }
+
+      .no_involvement_elements {
+        margin-bottom: 0;
       }
 
       .involvement-table {
@@ -391,6 +399,28 @@
         width: 100%;
         max-width: 100%;
       }
+    }
+  }
+}
+
+.related-projects-section {
+  @include section-base;
+
+  .related-projects-box {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: $text-white;
+
+    @media screen and (min-width: 800px) {
+      width: 100%;
+    }
+
+    .related-projects-title {
+      width: 100%;
+      margin-bottom: 28px;
+      margin-top: 0;
+      font-size: 26px;
+      line-height: 1.3;
     }
   }
 }
