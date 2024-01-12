@@ -38,10 +38,10 @@ const WorkGrid = () => {
             spacing={2}
             className={`work-grid`}
         >
-            {workData.map((data) => (
+            {workData.map((data, index) => (
                 <ImageComponent
                     key={data.id}
-                    id={data.id}
+                    id={index + 1}
                     src={data.imgSrc}
                     alt={`Work ${data.id}`}
                     title={data.title}

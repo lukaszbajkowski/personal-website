@@ -1,4 +1,3 @@
-import React from "react";
 import img1 from '../Img/Zrzut_ekranu_2023-01-20_o_15.56.31.png';
 import img2 from '../Img/Zrzut_ekranu_2023-01-20_o_23.31.47.png';
 import img3 from '../Img/Zrzut_ekranu_2023-01-20_o_15.56.38.png';
