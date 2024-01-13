@@ -2,10 +2,9 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 import './WorkDetails.scss'
 import {workData} from "../Work/WorkData";
-import {Divider, Grid, ThemeProvider} from "@mui/material";
-import theme from "../Style/Theme";
+import {Divider} from "@mui/material";
 import ProcessSection from "./ProcessSection";
-import ImageComponent from "../Work/ImageComponent";
+import renderRelatedProjectsSection from "./RelatedPosts";
 
 const WorkDetails = () => {
     const {id} = useParams();
@@ -302,41 +301,10 @@ const WorkDetails = () => {
             )}
 
             {selectedWork.related_posts && (
-                <>
+                <React.Fragment>
                     <Divider className={`divider`}/>
-
-                    <div
-                        className="related-projects-section"
-                        data-radium="true"
-                    >
-                        <div
-                            className="related-projects-box"
-                            data-radium="true"
-                        >
-                            <h2
-                                className={`related-projects-title`}
-                                data-radium="true"
-                            >
-                                Related projects
-                            </h2>
-                        </div>
-                        <ThemeProvider theme={theme}>
-                            <Grid container spacing={2} className={`work-grid`}>
-                                {selectedWork.related_posts && selectedWork.related_posts.slice(0, 3).map((postId, index) => (
-                                    <ImageComponent
-                                        key={index}
-                                        id={postId}
-                                        src={workData[postId - 1].imgSrc}
-                                        alt={`Work ${postId}`}
-                                        title={workData[postId - 1].title}
-                                        subtitle={workData[postId - 1].subtitle}
-                                        relatedPosts={workData[postId - 1].related_posts}
-                                    />
-                                ))}
-                            </Grid>
-                        </ThemeProvider>
-                    </div>
-                </>
+                    {renderRelatedProjectsSection(selectedWork.related_posts)}
+                </React.Fragment>
             )}
         </>
     );
