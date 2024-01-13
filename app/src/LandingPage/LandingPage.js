@@ -3,7 +3,6 @@ import {Divider} from "@mui/material";
 import Landing from "./Landing/Landing";
 import Service from "./Service/Service";
 import Works from "./Works/Works";
-import Footer from "./Footer/Footer";
 import './LandingPage.scss'
 
 export default function LandingPage () {

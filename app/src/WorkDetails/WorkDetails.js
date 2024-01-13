@@ -1,30 +1,11 @@
 import React from 'react';
-import {Link, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import './WorkDetails.scss'
 import {workData} from "../Work/WorkData";
-import {Box, Divider, Grid, ThemeProvider} from "@mui/material";
+import {Divider, Grid, ThemeProvider} from "@mui/material";
 import theme from "../Style/Theme";
 import ProcessSection from "./ProcessSection";
-
-const ImageComponent = ({src, id, alt, title, subtitle}) => (
-    <Grid item xs={12} md={4} className={`work-item`}>
-        <Link
-            to={`/work/${id}`}
-        >
-            <Box className={`work-box`}>
-                <div className="square-container">
-                    <img src={src} alt={alt} className={`work-img`}/>
-                    <h2 data-radium="true" className={`title-work`}>
-                        {title}
-                    </h2>
-                    <span data-radium="true" className={`subtitle-work`}>
-                        {subtitle}
-                    </span>
-                </div>
-            </Box>
-        </Link>
-    </Grid>
-);
+import ImageComponent from "../Work/ImageComponent";
 
 const WorkDetails = () => {
     const {id} = useParams();
