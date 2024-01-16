@@ -210,11 +210,9 @@ const WorkDetails = () => {
 
             {(selectedWork.about_background_video || selectedWork.about_title || selectedWork.about_desc || selectedWork.about_img) && (
                 <>
-
                     {(selectedWork.about_title || selectedWork.about_desc || selectedWork.about_img) && (
                         <>
                             <Divider className={`divider`}/>
-
                             {selectedWork.about_background_video && (
                                 <div className="video-section">
                                     <div
@@ -303,7 +301,7 @@ const WorkDetails = () => {
             {selectedWork.related_posts && (
                 <React.Fragment>
                     <Divider className={`divider`}/>
-                    {renderRelatedProjectsSection(selectedWork.related_posts)}
+                    {renderRelatedProjectsSection(selectedWork.related_posts, id)}
                 </React.Fragment>
             )}
         </>

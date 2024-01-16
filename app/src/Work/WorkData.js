@@ -88,7 +88,7 @@ export const workData = [
         },
         about_img: about_img1,
         about_img_alt: "Pearson Course shown on multiple devices",
-        related_posts: [1, 2, 3],
+        related_posts: [1, 2, 3, 4],
     },
     {
         imgSrc: img2,
@@ -165,7 +165,7 @@ export const workData = [
         },
         about_img: about_img1,
         about_img_alt: "Pearson Course shown on multiple devices",
-        related_posts: [1, 2, 3],
+        related_posts: [1, 2, 3, 4],
     },
     {
         imgSrc: img3,
@@ -242,7 +242,7 @@ export const workData = [
         },
         about_img: about_img1,
         about_img_alt: "Pearson Course shown on multiple devices",
-        related_posts: [1, 2, 3],
+        related_posts: [1, 2, 3, 4],
     },
     {
         imgSrc: img4,
@@ -319,6 +319,6 @@ export const workData = [
         },
         about_img: about_img1,
         about_img_alt: "Pearson Course shown on multiple devices",
-        related_posts: [1, 2, 3],
+        related_posts: [1, 2, 3, 4],
     },
 ];
