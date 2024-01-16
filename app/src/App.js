@@ -33,6 +33,8 @@ function AppContainer () {
                 body.style.backgroundColor = '#1131ca';
                 break;
         }
+
+         window.scrollTo(0, 0);
     }, [location.pathname]);
 
     return (
