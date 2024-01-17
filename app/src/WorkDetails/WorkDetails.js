@@ -10,6 +10,8 @@ import ProcessGraphComponent from "./ProcessGraphComponent";
 import TextTitleComponent from "./TextTitleComponent";
 import TextDescComponent from "./TextDescComponent";
 import ImageRowComponent from "./ImageRowComponent";
+import LogoComponent from "./LogoComponent";
+import TextSectionComponent from "./TextSectionComponent";
 
 const WorkDetails = () => {
     const {id} = useParams();
@@ -52,79 +54,13 @@ const WorkDetails = () => {
             </section>
 
             {(selectedWork.project_logo || selectedWork.intro || selectedWork.intro_desc || selectedWork.involvement || selectedWork.involvement_elements) && (
-                <div
-                    className={`text-section`}
-                    data-radium="true"
-                >
-
-                    {selectedWork.project_logo && (
-                        <div
-                            className={`text-container svg-col`}
-                            data-radium="true"
-                            style={{marginInline: (selectedWork.intro || selectedWork.intro_desc || selectedWork.involvement || selectedWork.involvement_elements) ? "" : "auto"}}
-                        >
-                            <div
-                                data-radium="true"
-                            >
-                                <span
-                                    className="svg-display"
-                                    data-radium="true"
-                                    style={{paddingRight: (selectedWork.intro || selectedWork.intro_desc || selectedWork.involvement || selectedWork.involvement_elements) ? "" : "0px"}}
-                                >
-                                    <img src={selectedWork.project_logo}/>
-                                </span>
-                            </div>
-                        </div>
-                    )}
-
-                    {(selectedWork.intro || selectedWork.intro_desc || selectedWork.involvement || selectedWork.involvement_elements) && (
-                        <div
-                            className={`text-container ${!selectedWork.project_logo ? '' : 'text-col'}`}
-                            data-radium="true"
-                        >
-                            {selectedWork.intro && (
-                                <p
-                                    className="main-p"
-                                    data-radium="true"
-                                >
-                                    {selectedWork.intro}
-                                </p>
-                            )}
-
-                            {selectedWork.intro_desc && introDescMap && introDescMap.size > 0 && (
-                                <div>
-                                    {Array.from(introDescMap).map(([key, value]) => (
-                                        <p key={key} className={`p-desc`}>
-                                            {value}
-                                        </p>
-                                    ))}
-                                </div>
-                            )}
-
-                            {((selectedWork.involvement_elements && involvementElementsMap && involvementElementsMap.size > 0) || selectedWork.involvement) && (
-                                <div className="involvement-container" data-radium="true">
-                                    <h2 data-radium="true" className={`involvement-title`}>
-                                        Involvement
-                                    </h2>
-                                    {selectedWork.involvement && (
-                                        <p data-radium="true"
-                                           className={`involvement-desc ${!selectedWork.involvement_elements ? ' no_involvement_elements' : ''}`}>
-                                            {selectedWork.involvement}
-                                        </p>
-                                    )}
-                                    {selectedWork.involvement_elements && (
-                                        <ul data-radium="true" className={`involvement-table`}>
-                                            {Object.values(selectedWork.involvement_elements).map((element, index) => (
-                                                <li key={index} className="involvement-item" data-radium="true">
-                                                    {element}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                    )}
+                <div className={`text-section`} data-radium="true">
+                    <LogoComponent selectedWork={selectedWork}/>
+                    <TextSectionComponent
+                        selectedWork={selectedWork}
+                        introDescMap={introDescMap}
+                        involvementElementsMap={involvementElementsMap}
+                    />
                 </div>
             )}
 
