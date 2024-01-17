@@ -12,6 +12,8 @@ import TextDescComponent from "./TextDescComponent";
 import ImageRowComponent from "./ImageRowComponent";
 import LogoComponent from "./LogoComponent";
 import TextSectionComponent from "./TextSectionComponent";
+import BackgroundStyle from "./BackgroundStyle";
+import BackgroundContainer from "./BackgroundContainer";
 
 const WorkDetails = () => {
     const {id} = useParams();
@@ -32,26 +34,12 @@ const WorkDetails = () => {
 
     return (
         <>
-            <section
-                className="background-section"
-                style={{backgroundImage: `url(${selectedWork.imgSrc})`,}}
-                data-radium="true"
-            >
-                <div
-                    data-radium="true"
-                    className={`background-style`}
-                    style={backgroundStyle}
-                ></div>
-                <div className="container-background container" data-radium="true">
-                    <div className="background-text" data-radium="true">
-                        <div className="text-position" data-radium="true">
-                            <h1 className="text-size" data-radium="true">
-                                {selectedWork.title}
-                            </h1>
-                        </div>
-                    </div>
+            <React.Fragment>
+                <div className="background-section" style={{backgroundImage: `url(${selectedWork.imgSrc})`}}>
+                    <BackgroundStyle backgroundStyle={backgroundStyle}/>
+                    <BackgroundContainer selectedWork={selectedWork}/>
                 </div>
-            </section>
+            </React.Fragment>
 
             {(selectedWork.project_logo || selectedWork.intro || selectedWork.intro_desc || selectedWork.involvement || selectedWork.involvement_elements) && (
                 <div className={`text-section`} data-radium="true">
