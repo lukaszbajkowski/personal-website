@@ -22,24 +22,16 @@ const ProcessSection = (props) => {
                         <h3 className="graph-element-title">
                             {title}
                         </h3>
-                        {Array.isArray(elements) ? (
-                            elements.map((element, index) => (
+                        <li className="graph-element-content">
+                            {Object.values(elements).map((value, index) => (
                                 <li
                                     key={index}
                                     className="graph-element-content"
                                 >
-                                    {element}
+                                    {value}
                                 </li>
-                            ))
-                        ) : (
-                            <li className="graph-element-content">
-                                {Object.values(elements).map((value, index) => (
-                                    <span key={index}>
-                                        {value}
-                                    </span>
-                                ))}
-                            </li>
-                        )}
+                            ))}
+                        </li>
                     </div>
                 );
             })}
