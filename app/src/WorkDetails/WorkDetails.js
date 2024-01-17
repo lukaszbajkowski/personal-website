@@ -1,7 +1,5 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
-import './WorkDetails.scss'
-import {workData} from "../Work/WorkData";
 import {Divider} from "@mui/material";
 import renderRelatedProjectsSection from "./RelatedPosts";
 import VideoSection from "./VideoSection";
@@ -14,94 +12,78 @@ import LogoComponent from "./LogoComponent";
 import TextSectionComponent from "./TextSectionComponent";
 import BackgroundStyle from "./BackgroundStyle";
 import BackgroundContainer from "./BackgroundContainer";
+import {workData} from "../Work/WorkData";
+
+const renderIfExists = (condition, element) => condition && element;
 
 const WorkDetails = () => {
     const {id} = useParams();
     const selectedWork = workData[id - 1];
 
-    const backgroundStyle = {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 30%, ${selectedWork.color})`,
-    };
-
-    const backgroundGradient = {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 30%, ${selectedWork.color} 50%)`,
-    };
-
-    const introDescMap = selectedWork.intro_desc ? new Map(Object.entries(selectedWork.intro_desc)) : null;
-    const involvementElementsMap = selectedWork.involvement_elements ? new Map(Object.entries(selectedWork.involvement_elements)) : null;
-    const processElementsMap = selectedWork.process_desc ? new Map(Object.entries(selectedWork.process_desc)) : null;
-    const aboutElementsMap = selectedWork.about_desc ? new Map(Object.entries(selectedWork.about_desc)) : null;
-
     return (
         <>
-            <React.Fragment>
-                <div className="background-section" style={{backgroundImage: `url(${selectedWork.imgSrc})`}}>
-                    <BackgroundStyle backgroundStyle={backgroundStyle}/>
-                    <BackgroundContainer selectedWork={selectedWork}/>
-                </div>
-            </React.Fragment>
+            <div className="background-section" style={{backgroundImage: `url(${selectedWork.imgSrc})`}}>
+                <BackgroundStyle
+                    backgroundStyle={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 30%, ${selectedWork.color})`}}/>
+                <BackgroundContainer selectedWork={selectedWork}/>
+            </div>
 
-            {(selectedWork.project_logo || selectedWork.intro || selectedWork.intro_desc || selectedWork.involvement || selectedWork.involvement_elements) && (
+            {renderIfExists(
+                selectedWork.project_logo || selectedWork.intro || selectedWork.intro_desc || selectedWork.involvement || selectedWork.involvement_elements,
                 <div className={`text-section`} data-radium="true">
                     <LogoComponent selectedWork={selectedWork}/>
                     <TextSectionComponent
                         selectedWork={selectedWork}
-                        introDescMap={introDescMap}
-                        involvementElementsMap={involvementElementsMap}
+                        introDescMap={selectedWork.intro_desc ? new Map(Object.entries(selectedWork.intro_desc)) : null}
+                        involvementElementsMap={selectedWork.involvement_elements ? new Map(Object.entries(selectedWork.involvement_elements)) : null}
                     />
                 </div>
             )}
 
-            {(selectedWork.process || selectedWork.process_title || selectedWork.process_desc || selectedWork.process_img) && (
+            {renderIfExists(
+                selectedWork.process || selectedWork.process_title || selectedWork.process_desc || selectedWork.process_img,
                 <>
                     <Divider className={`divider`}/>
                     <div className="process-section" data-radium="true">
-                        {selectedWork.process && (
-                            <ProcessGraphComponent process={selectedWork.process}/>
-                        )}
-                        {selectedWork.process_title && (
-                            <TextTitleComponent
-                                title={selectedWork.process_title}
-                                hasDescription={selectedWork.process_desc}
-                            />
-                        )}
-                        {selectedWork.process_desc && processElementsMap && processElementsMap.size > 0 && (
+                        {renderIfExists(selectedWork.process, <ProcessGraphComponent process={selectedWork.process}/>)}
+                        {renderIfExists(selectedWork.process_title, <TextTitleComponent
+                            title={selectedWork.process_title} hasDescription={selectedWork.process_desc}/>)}
+                        {renderIfExists(
+                            selectedWork.process_desc && selectedWork.process_desc.length > 0,
                             <TextDescComponent
                                 desc={selectedWork.process_desc}
-                                processElementsMap={processElementsMap}
-                            />
+                                processElementsMap={selectedWork.process_desc ? new Map(Object.entries(selectedWork.process_desc)) : null}/>
                         )}
-                        {selectedWork.process_img && (
-                            <ImageRowComponent
-                                img={selectedWork.process_img}
-                                alt={selectedWork.process_img_alt}
-                            />
-                        )}
+                        {renderIfExists(selectedWork.process_img, <ImageRowComponent img={selectedWork.process_img}
+                                                                                     alt={selectedWork.process_img_alt}/>)}
                     </div>
                 </>
             )}
 
-            {(selectedWork.about_background_video || selectedWork.about_title || selectedWork.about_desc || selectedWork.about_img) && (
+            {renderIfExists(
+                selectedWork.about_background_video || selectedWork.about_title || selectedWork.about_desc || selectedWork.about_img,
                 <>
-                    {(selectedWork.about_title || selectedWork.about_desc || selectedWork.about_img) && (
+                    {renderIfExists(
+                        selectedWork.about_title || selectedWork.about_desc || selectedWork.about_img,
                         <>
                             <Divider className={`divider`}/>
-                            {selectedWork.about_background_video && (
+                            {renderIfExists(
+                                selectedWork.about_background_video,
                                 <VideoSection
                                     videoSrc={selectedWork.about_background_video}
-                                    backgroundGradient={backgroundGradient}
-                                />
+                                    backgroundGradient={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 30%, ${selectedWork.color} 50%)`}}/>
                             )}
                             <AboutResponsiveSection
                                 selectedWork={selectedWork}
-                                aboutElementsMap={aboutElementsMap}
+                                aboutElementsMap={selectedWork.about_desc ? new Map(Object.entries(selectedWork.about_desc)) : null}
                             />
                         </>
                     )}
                 </>
             )}
 
-            {selectedWork.related_posts && (
+            {renderIfExists(
+                selectedWork.related_posts,
                 <>
                     <Divider className={`divider`}/>
                     {renderRelatedProjectsSection(selectedWork.related_posts, id)}
