@@ -3,10 +3,13 @@ import {useParams} from 'react-router-dom';
 import './WorkDetails.scss'
 import {workData} from "../Work/WorkData";
 import {Divider} from "@mui/material";
-import ProcessSection from "./ProcessSection";
 import renderRelatedProjectsSection from "./RelatedPosts";
 import VideoSection from "./VideoSection";
 import AboutResponsiveSection from "./AboutResponsiveSection";
+import ProcessGraphComponent from "./ProcessGraphComponent";
+import TextTitleComponent from "./TextTitleComponent";
+import TextDescComponent from "./TextDescComponent";
+import ImageRowComponent from "./ImageRowComponent";
 
 const WorkDetails = () => {
     const {id} = useParams();
@@ -128,83 +131,27 @@ const WorkDetails = () => {
             {(selectedWork.process || selectedWork.process_title || selectedWork.process_desc || selectedWork.process_img) && (
                 <>
                     <Divider className={`divider`}/>
-                    <div
-                        className="process-section"
-                        data-radium="true"
-                    >
-
+                    <div className="process-section" data-radium="true">
                         {selectedWork.process && (
-                            <div
-                                className="process-graph"
-                                data-radium="true"
-                            >
-                                <div
-                                    className="process-container"
-                                    data-radium="true"
-                                >
-                                    <h2
-                                        data-radium="true"
-                                        className={`graph-title`}
-                                    >
-                                        Process
-                                    </h2>
-                                    <ProcessSection process={selectedWork.process}/>
-                                </div>
-                            </div>
+                            <ProcessGraphComponent process={selectedWork.process}/>
                         )}
-
                         {selectedWork.process_title && (
-                            <div
-                                className={`text-col-title ${!selectedWork.process_desc ? 'no_involvement_elements' : ''}`}
-                                data-radium="true"
-                                style={{width: selectedWork.process_desc ? "" : "100%"}}
-                            >
-                                <h2
-                                    data-radium="true"
-                                    className={`text-title`}
-                                >
-                                    {selectedWork.process_title}
-                                </h2>
-                            </div>
+                            <TextTitleComponent
+                                title={selectedWork.process_title}
+                                hasDescription={selectedWork.process_desc}
+                            />
                         )}
-
                         {selectedWork.process_desc && processElementsMap && processElementsMap.size > 0 && (
-                            <div
-                                className={`text-col-desc`}
-                                data-radium="true"
-                                style={{width: selectedWork.process_title ? "" : "100%"}}
-                            >
-                                {selectedWork.process_desc && (
-                                    <div>
-                                        {Object.values(selectedWork.process_desc).map((element, index) => (
-                                            <p className={`desc-content`}>
-                                                {element}
-                                            </p>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
+                            <TextDescComponent
+                                desc={selectedWork.process_desc}
+                                processElementsMap={processElementsMap}
+                            />
                         )}
-
                         {selectedWork.process_img && (
-                            <div
-                                className="image-row"
-                                data-radium="true"
-                            >
-                                <div>
-                                    <div
-                                        className={`image-position`}
-                                        data-radium="true"
-                                    >
-                                        <img
-                                            src={selectedWork.process_img}
-                                            alt={selectedWork.process_img_alt}
-                                            className={`image`}
-                                            data-radium="true"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+                            <ImageRowComponent
+                                img={selectedWork.process_img}
+                                alt={selectedWork.process_img_alt}
+                            />
                         )}
                     </div>
                 </>
