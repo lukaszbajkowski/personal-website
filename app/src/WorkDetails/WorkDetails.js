@@ -5,6 +5,8 @@ import {workData} from "../Work/WorkData";
 import {Divider} from "@mui/material";
 import ProcessSection from "./ProcessSection";
 import renderRelatedProjectsSection from "./RelatedPosts";
+import VideoSection from "./VideoSection";
+import AboutResponsiveSection from "./AboutResponsiveSection";
 
 const WorkDetails = () => {
     const {id} = useParams();
@@ -214,95 +216,25 @@ const WorkDetails = () => {
                         <>
                             <Divider className={`divider`}/>
                             {selectedWork.about_background_video && (
-                                <div className="video-section">
-                                    <div
-                                        data-radium="true"
-                                        className={`video-box`}
-                                    >
-                                        <video
-                                            src={selectedWork.about_background_video}
-                                            loop
-                                            autoPlay
-                                            muted
-                                            className="video-display"
-                                            data-radium="true"
-                                        />
-                                        <div
-                                            data-radium="true"
-                                            className={`position-gradient`}
-                                            style={backgroundGradient}
-                                        />
-                                    </div>
-                                </div>
+                                <VideoSection
+                                    videoSrc={selectedWork.about_background_video}
+                                    backgroundGradient={backgroundGradient}
+                                />
                             )}
-                            <div
-                                className="about-responsive-section"
-                                data-radium="true"
-                            >
-                                {selectedWork.about_title && (
-                                    <div
-                                        className={`text-col-title`}
-                                        data-radium="true"
-                                        style={{width: selectedWork.about_desc ? "" : "100%"}}
-                                    >
-                                        <h2
-                                            className={`text-title`}
-                                            data-radium="true"
-                                        >
-                                            {selectedWork.about_title}
-                                        </h2>
-                                    </div>
-                                )}
-
-                                {selectedWork.about_desc && aboutElementsMap && aboutElementsMap.size > 0 && (
-                                    <div
-                                        className="text-col-desc"
-                                        data-radium="true"
-                                        style={{width: selectedWork.about_title ? "" : "100%"}}
-                                    >
-                                        {selectedWork.about_desc && (
-                                            <div>
-                                                {Object.values(selectedWork.about_desc).map((element, index) => (
-                                                    <p className={`desc-content`}>
-                                                        {element}
-                                                    </p>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
-
-                                {selectedWork.about_img && (
-                                    <div
-                                        className="device-responsive-section"
-                                        data-radium="true"
-                                    >
-                                        <div>
-                                            <div
-                                                className={`image-position`}
-                                                data-radium="true"
-                                            >
-                                                <img
-                                                    src={selectedWork.about_img}
-                                                    alt={selectedWork.about_img_alt}
-                                                    data-radium="true"
-                                                    className={`responsive-design-img`}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                            <AboutResponsiveSection
+                                selectedWork={selectedWork}
+                                aboutElementsMap={aboutElementsMap}
+                            />
                         </>
                     )}
                 </>
             )}
 
             {selectedWork.related_posts && (
-                <React.Fragment>
+                <>
                     <Divider className={`divider`}/>
                     {renderRelatedProjectsSection(selectedWork.related_posts, id)}
-                </React.Fragment>
+                </>
             )}
         </>
     );
