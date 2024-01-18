@@ -1,7 +1,8 @@
 import {ThemeProvider} from "@mui/material";
-import theme from "../Style/Theme";
 import renderRelatedPosts from "./RelatedPostsMap";
 import React from "react";
+import theme from "../../Style/Theme";
+import '../WorkDetails.scss'
 
 const renderRelatedProjectsSection = (relatedPosts, id) => (
     <div className="related-projects-section" data-radium="true">

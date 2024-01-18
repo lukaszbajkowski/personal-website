@@ -1,12 +1,12 @@
 import React, {useMemo} from 'react';
 
-const ProcessSection = (props) => {
+const ProcessComponent = (props) => {
     const {process} = props;
 
     const numberOfPhases = useMemo(() => Object.keys(process).length, [process]);
 
     return (
-        <React.Fragment>
+        <>
             {Object.keys(process).map((key) => {
                 const {title, elements} = process[key];
                 const elementWidth = `calc(${100 / numberOfPhases}% - 10px)`;
@@ -35,8 +35,8 @@ const ProcessSection = (props) => {
                     </div>
                 );
             })}
-        </React.Fragment>
+        </>
     );
 };
 
-export default ProcessSection;
+export default ProcessComponent;

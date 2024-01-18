@@ -1,8 +1,8 @@
 import React from 'react';
-import './WorkDetails.scss'
-import {workData} from "../Work/WorkData";
+import '../WorkDetails.scss'
 import {Grid} from "@mui/material";
-import ImageComponent from "../Work/ImageComponent";
+import {workData} from "../../Work/WorkData";
+import ImageComponent from "../../Work/ImageComponent";
 
 const renderRelatedPosts = (relatedPosts, id) => {
     let filteredRelatedPosts = relatedPosts.filter(postId => postId == (id)).slice(0, 3);

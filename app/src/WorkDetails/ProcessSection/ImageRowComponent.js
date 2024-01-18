@@ -1,4 +1,5 @@
 import React from 'react';
+import '../WorkDetails.scss'
 
 const ImageRowComponent = ({img, alt}) => (
     <div className="image-row" data-radium="true">

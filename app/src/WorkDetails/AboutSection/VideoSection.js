@@ -1,5 +1,5 @@
 import React from 'react';
-import './WorkDetails.scss'
+import '../WorkDetails.scss'
 
 const VideoSection = ({videoSrc, backgroundGradient}) => (
     <div className="video-section">

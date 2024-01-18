@@ -1,6 +1,6 @@
 import React from 'react';
-import IntroSection from './IntroSection';
-import InvolvementSection from './InvolvementSection';
+import IntroSection from "./IntroSection";
+import InvolvementSection from "./InvolvementSection";
 
 const TextSectionComponent = ({selectedWork, introDescMap, involvementElementsMap}) => {
     return (

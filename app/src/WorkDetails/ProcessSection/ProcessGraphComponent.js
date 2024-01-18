@@ -1,5 +1,6 @@
 import React from 'react';
-import ProcessSection from './ProcessSection';
+import '../WorkDetails.scss'
+import ProcessComponent from "./ProcessComponent";
 
 const ProcessGraphComponent = ({process}) => (
     <div className="process-graph" data-radium="true">
@@ -7,7 +8,7 @@ const ProcessGraphComponent = ({process}) => (
             <h2 data-radium="true" className={`graph-title`}>
                 Process
             </h2>
-            <ProcessSection process={process}/>
+            <ProcessComponent process={process}/>
         </div>
     </div>
 );

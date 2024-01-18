@@ -1,5 +1,5 @@
 import React from 'react';
-import './WorkDetails.scss'
+import '../WorkDetails.scss'
 
 const AboutResponsiveSection = ({selectedWork, aboutElementsMap}) => (
     <div className="about-responsive-section" data-radium="true">
